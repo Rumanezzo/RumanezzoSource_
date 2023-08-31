@@ -1,39 +1,42 @@
 from turtle import *
 
-title('Интерактивная Черепашка!')  # Заголовок
+title('Интерактивная Черепашка - управляется с клавиатуры!')  # Заголовок
 mode('logo')  # Черепашка на север
 bgcolor('black')  # Цвет Фона
 color('green', 'blue')  # Цвет Линии и Заливки
 shape('turtle')  # Форма Черепашки
 width(5)  # Ширина Линии
 speed(0)  # Скорость Движения
-
-colors = ["aquamarine", "bisque", "burlywood", "chartreuse", "magenta", "moccasin", "navy", "plum", "tan", "thistle",
-          "turquoise", "tomato", "red", "green", "blue", "orange", "purple", "pink", "yellow", "brown", "violet",
-          "salmon", "gold", "lavender", "gainsboro", "cornsilk", "ivory", "linen", "honeydew", "maroon", "azure",
-          "sienna", "peru"]
+s = Screen()
+s.setup(0.99, 0.9, 0, 0)
 
 
-def up():
-    fd(50)
+def upper():
+    fd(75)
+    circle(50)
 
 
-def down():
+def downer():
     bk(50)
+    circle(25)
 
 
-def left():
+def lefter():
     lt(30)
+    fd(25)
+    fd(-25)
 
 
-def right():
+def righter():
     rt(30)
+    fd(25)
+    fd(-25)
 
 
-onkey(up, "Up")
-onkey(left, 'Left')
-onkey(right, 'Right')
-onkey(down, 'Down')
+onkey(upper, "Up")
+onkey(lefter, 'Left')
+onkey(righter, 'Right')
+onkey(downer, 'Down')
 
 listen()
 exitonclick()

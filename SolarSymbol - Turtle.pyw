@@ -34,7 +34,7 @@ def sun(count, n):
         lt(120 // count)
 
 
-sun(15, 12)
+sun(12, 9)
 
 # Конец Программы
 exitonclick()

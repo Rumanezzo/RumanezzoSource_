@@ -1,13 +1,13 @@
 from turtle import color, setup, title, shape, bgcolor, width, speed
 from turtle import home, numinput, exitonclick, ht, lt, rt, fd, pu, pd
 
-colors = ("red", "blue", "green", "yellow", "orange", "purple", "pink", "violet", "aquamarine", "bisque", "burlywood",
-          "chartreuse", "magenta", "moccasin", "navy", "plum", "tan", "thistle", "turquoise", "tomato", "brown",
-          "salmon", "gold", "lavender", "gainsboro", "cornsilk", "ivory", "linen", "honeydew", "maroon", "azure",
-          "sienna", "peru")
+colors = ("red", "blue", "green", "yellow", "orange", "purple", "pink", "violet", "aquamarine",
+          "bisque", "burlywood", "chartreuse", "magenta", "moccasin", "navy", "plum", "tan",
+          "turquoise", "tomato", "brown", "salmon", "gold", "cornsilk", "maroon", "sienna",
+          "crimson", "greenyellow", "crimson")
 
-setup(0.9, 0.75)
-title('Непричесанные спирали')
+setup(0.99, 0.9, 0, 0)
+title('Квадратные спирали - много цветов, разная толщина')
 shape('turtle')
 color('white')
 bgcolor('black')
@@ -17,9 +17,9 @@ ht()
 
 
 def spiral():
-    for i in range(len(colors)):
-        color(colors[i % len(colors)])
-        fd(30 + 10 * i)
+    for i, name in enumerate(colors):
+        color(name)
+        fd(120 + 10 * i)
         lt(90)
         width(i % 5)
     pu()
@@ -27,13 +27,12 @@ def spiral():
     pd()
 
 
-def main(n):
+def result(x):
+    n = int(x)
     for i in range(n):
         spiral()
-        rt(360 / n + 360 / n * i)
+        rt(360 / n * (1 + i))
 
-
-n_ = int(numinput('Сколько спиралей?', '3-20', 5, 3, 20))
-main(n_)
-
+x0 = numinput('Сколько спиралей?', 'Минимальное-3, Максимальное-21', 5, 3, 21)
+result(x0)
 exitonclick()

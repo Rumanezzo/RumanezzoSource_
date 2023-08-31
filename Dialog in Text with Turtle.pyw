@@ -2,8 +2,11 @@ from turtle import *
 from random import randint
 from keyboard import read_event, KEY_DOWN
 
-symbols = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя-АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789."
-colors = {5: 'green', 4: 'yellow', 3: 'orange', 2: 'red'}
+symbols_rus = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя-АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789."
+symbols_eng = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+symbols = symbols_rus + symbols_eng
+
+colors = {5: 'lightgreen', 4: 'green', 3: 'orange', 2: 'red'}
 results = {5: 'Отлично!', 4: 'Хорошо!', 3: 'Так себе!', 2: 'Отвратительно!'}
 mistakes = 0
 
@@ -91,7 +94,8 @@ else:
 success = 5 - mistakes
 success = 2 if success < 2 else success
 
+text(last + 2, f'{name}! Эта нелегкая работа была выполнена тобой...')
 t0.color(colors[success])
-text(last + 2, f'{name}! Эта нелегкая работа была выполнена тобой... {results[success]}')
+text(last + 3, f'{results[success]}'*6)
 s0.title('Для завершения программы - кликнете по окну!')
 s0.exitonclick()

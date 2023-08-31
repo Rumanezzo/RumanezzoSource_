@@ -1,7 +1,8 @@
 from turtle import Turtle, onkey, clear, write, title, ht, pu, Terminator, goto, listen, exitonclick
 
 t1, t2, t3 = [], [], []
-n0 = 4  # Количество колец
+n0 = 6  # Количество колец
+font0 = ("FreeMono", 18, "bold")
 
 
 class Disc(Turtle):
@@ -44,8 +45,8 @@ def play():
     try:
         hanoi(n0, t1, t2, t3)
         write("Кликните на экран, чтобы выйти!",
-              align="center", font=("FreeMono", 18, "bold"))
-        title('Мы закончили!')
+              align="center", font=font0)
+        title('Мы закончили - Башня собрана!')
     except Terminator:
         pass
 
@@ -64,7 +65,7 @@ def main():
         t1.push(Disc(i))
     # prepare user interface
     write("Нажмите Пробел, чтобы начать",
-          align="center", font=("FreeMono", 18, "bold"))
+          align="center", font=font0)
     onkey(play, "space")
     listen()
 
