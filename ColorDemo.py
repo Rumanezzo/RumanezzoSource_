@@ -2,7 +2,7 @@ from turtle import ht, speed, bgcolor, width, color, circle, rt, done, setup
 import colorsys
 
 ht()
-setup(0.99, 0.9,0, 0)
+setup(0.99, 0.9, 0, 0)
 speed('fastest')
 bgcolor('black')
 width(2)

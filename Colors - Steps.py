@@ -14,7 +14,7 @@ t0.rt(90)
 t0.st()
 t0.pd()
 t0.speed(0)
-for _ in 2 *  colors:
+for _ in 2 * colors:
     t0.color(_)
     t0.write(_, font=font)
     t0.fd(30)
