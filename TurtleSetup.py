@@ -63,13 +63,15 @@ if __name__ == '__main__':
     for i, c in enumerate(colors):
         t0.color(c)
         t0.write(c, font=font)
+        s0.title(f'Проверяем работоспособность модуля...Всего цветов -> {n_colors - i} -> рисуем {c}')
         t0.circle(40)
-
-        s0.title(f'Проверяем работоспособность модуля...Всего цветов -> {n_colors - i}')
         t0.goto(xl + 50 * (i + 1), 0)
+
+    t0.color('maroon')
     t0.home()
 
     s0.title('Рисуем окружность, а затем меняем цвет фона!')
+    t0.color('gold')
     t0.circle(100)
 
     s0.title('Меняем цвет фона...и рисуем большую окружность')
@@ -78,17 +80,18 @@ if __name__ == '__main__':
     t0.rt(180)
     t0.circle(200)
     t0.rt(90)
+    t0.color('burlywood')
     s0.title('Рисуем ушки...')
     t0.circle(30)
     t0.rt(180)
     t0.circle(30)
-    s0.title('Меняем цвет фона... на зеленый! И рисуем *большие* черные уши!')
-    s0.bgcolor('green')
+    s0.title('Меняем цвет фона... на серый! И рисуем *большие* черные уши!')
+    s0.bgcolor('gray')
     t0.color('black')
     t0.circle(120)
     t0.rt(180)
     t0.circle(120)
-
+    s0.title('Расставляем точки над ё...')
     moving(xl, yu)
     moving(xr, yu)
     moving(xl, yd)
