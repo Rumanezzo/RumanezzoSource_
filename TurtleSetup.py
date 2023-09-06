@@ -31,16 +31,17 @@ x_left = -x_right  # Самая левая
 y_up = s0.window_height() // 2 - step  # Самая верхняя
 y_down = -y_up  # Самая нижняя
 
-s0.bgcolor('grey')
+s0.bgcolor('lightgrey')
 # -------------------------------Конец инициализации экрана-------------------------------
 
 colors = (
-    "red", "blue", "green", "yellow", "orange", "purple", "pink", "violet", "aquamarine",
-    "bisque", "burlywood", "chartreuse", "magenta", "moccasin", "navy", "plum", "tan",
-    "thistle", "turquoise", "tomato", "brown", "salmon", "gold", "maroon", "sienna",
-    "peru", "lightgreen", "cyan",)
-
+    "red", "blue", "green", "yellow", "orange", "purple", "pink", "violet", "aquamarine", "darkgreen",
+    "bisque", "burlywood", "chartreuse", "magenta", "moccasin", "navy", "plum", "tan", "violetred",
+    "thistle", "turquoise", "tomato", "brown", "salmon", "gold", "maroon", "sienna", "limegreen",
+    "peru", "lightgreen", "cyan", "purple", "indigo", "olive", "lime", "lightpink", "midnightblue",)
+colors0 = ("red", "blue", "green",)
 n_colors = len(colors)
+radius = 20
 
 if __name__ == '__main__':
 
@@ -54,53 +55,42 @@ if __name__ == '__main__':
         t0.st()
 
     t0.ht()
-    t0.speed(6)
+    t0.speed(0)
     t0.width(8)
     t0.pu()
-    t0.goto(x_left, 0)
-    t0.st()
-    t0.pd()
 
-    title_output = '⋅'
-    for i, c in enumerate(colors):
-        t0.color(c)
+    for _ in range(9):
+        t0.pu()
+        t0.goto(x_left + 2 * radius, y_up - (4*_+1)*radius)
+        t0.pd()
 
-        title_output += f'{c}⋅'
-        s0.title(title_output)
-        t0.circle(40)
-        t0.bk(40)
-        if i % 2:
-            t0.lt(90)
-        else:
+        title_output = '⋅'
+        for i, c in enumerate(colors):
+            t0.color(c)
+            title_output += f'{c}⋅'
+            s0.title(title_output)
+            t0.circle(radius)
             t0.rt(90)
-        t0.fd(40)
-        t0.write(c, font=font)
-        t0.goto(x_left + 50 * (i + 1), 0)
+            t0.pu()
+            t0.fd(2*radius)
+            t0.lt(90)
+            t0.pd()
 
-    t0.color('maroon')
-    t0.home()
+        t0.lt(180)
+        t0.fd(radius)
+        t0.rt(90)
+        t0.fd(3*radius)
+        t0.pd()
 
-    s0.title('Рисуем окружность, а затем меняем цвет фона!')
-    t0.color('gold')
-    t0.circle(100)
+        title_output = '⋅'
+        for i, c in enumerate(colors):
+            t0.color(c)
+            title_output += f'{c}⋅'
+            s0.title(title_output)
+            t0.circle(radius)
+            t0.fd(2*radius)
+        t0.rt(90)
 
-    s0.title('Меняем цвет фона...и рисуем большую окружность')
-    s0.bgcolor('peru')
-    t0.width(5)
-    t0.rt(180)
-    t0.circle(200)
-    t0.rt(90)
-    t0.color('chartreuse')
-    s0.title('Рисуем ушки...')
-    t0.circle(30)
-    t0.rt(180)
-    t0.circle(30)
-    s0.title('Меняем цвет фона... на серый! И рисуем *большие* черные уши!')
-    s0.bgcolor('gray')
-    t0.color('black')
-    t0.circle(120)
-    t0.rt(180)
-    t0.circle(120)
     s0.title('Расставляем точки над ё...')
     moving(x_left, y_up, 'yellow')
     moving(x_right, y_up, 'green')
