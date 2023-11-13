@@ -96,6 +96,6 @@ success = 2 if success < 2 else success
 
 text(last + 2, f'{name}! Эта нелегкая работа была выполнена тобой...')
 t0.color(colors[success])
-text(last + 3, f'{results[success]}'*6)
+text(last + 3, f'{results[success]}'*4)
 s0.title('Для завершения программы - кликнете по окну!')
 s0.exitonclick()
