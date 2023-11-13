@@ -33,6 +33,7 @@ def result(x):
         spiral()
         rt(360 / n * (1 + i))
 
+
 x0 = numinput('Сколько спиралей?', 'Минимальное-3, Максимальное-21', 5, 3, 21)
 result(x0)
 exitonclick()

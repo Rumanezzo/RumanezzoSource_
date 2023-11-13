@@ -1,5 +1,5 @@
-from turtle import exitonclick, title, width, color, begin_fill, end_fill, circle, lt, up, fd, rt, ht, backward, down,\
-    reset
+from turtle import exitonclick, title, width, color, begin_fill, end_fill, circle, lt, up
+from turtle import fd, rt, ht, backward, down, reset
 
 
 def yin(radius, color1, color2):

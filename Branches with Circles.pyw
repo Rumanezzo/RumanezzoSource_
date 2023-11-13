@@ -1,4 +1,5 @@
 from turtle import Screen, Turtle
+
 s0 = Screen()
 s0.title('Рисуем узоры с кружочками...')
 s0.setup(0.99, 0.9, 0, 0)
@@ -17,7 +18,7 @@ t0.ht()
 
 def polygon(n=12, size=100, t=t0):
     t0.width(6)
-    
+
     for _ in range(n):
         t.color("olive")
         t.fd(2 * size)
@@ -26,6 +27,7 @@ def polygon(n=12, size=100, t=t0):
         t.color("green")
         t.bk(size)
         t.rt(360 // n)
+
 
 for i in range(5):
     polygon(18, 100 - 20 * i)
@@ -39,7 +41,6 @@ t0.pu()
 t0.goto(-s0.window_width() // 4, 0)
 t0.color('green')
 t0.write('Всё!!!', font=font)
-
 
 s0.title('Работа выполнена! - кликнете на экран!')
 s0.exitonclick()

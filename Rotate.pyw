@@ -17,26 +17,27 @@ l0 = 135
 
 angle = 180 / n
 
-def figure(h, flag=1, r=r0, l=l0):
-    color(hsv_to_rgb(h, 1, 1))    
-    fd(l)
+
+def figure(h, flag=1, r=r0, length=l0):
+    color(hsv_to_rgb(h, 1, 1))
+    fd(length)
     rt(60 * flag)
-    fd(l)
+    fd(length)
     lt(120 * flag)
     circle(r * flag)
     rt(240 * flag)
-    fd(l)
+    fd(length)
     rt(60 * flag)
-    fd(l)
+    fd(length)
     h += 0.02
     return h
 
+
 for i in range(n):
-    h0 = figure(h0, r=-r0+i/500*r0, l=l0+i/500*l0)
-    h0 = figure(h0, r=-r0+i/500*r0, l=l0+i/500*l0, flag=-1)    
+    h0 = figure(h0, r=-r0 + i // 500 * r0, length=l0 + i // 500 * l0)
+    h0 = figure(h0, r=-r0 + i // 500 * r0, length=l0 + i // 500 * l0, flag=-1)
     lt(angle)
     s0.title(f'{n - i - 1}')
 
 s0.title('Работа выполнена - кликнете по окну!')
 exitonclick()
-    
